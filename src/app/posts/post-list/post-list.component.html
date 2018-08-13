@@ -1,0 +1,54 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="false" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts; let i = index">
+    <mat-expansion-panel-header>
+      <p>{{post.title}} --- <span class=displayName> User: {{ post.creatorName }}</span></p>
+    </mat-expansion-panel-header>
+    <p>{{post.content}}</p>
+    <div class="post-image" *ngIf="post.imagePath !== null">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    <mat-action-row>
+      <a mat-button color="basic" [routerLink]="['/edit', post.id]" *ngIf="userAuthenticated && userId === post.creatorId">EDIT</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)" *ngIf="userAuthenticated && userId === post.creatorId">DELETE</button>
+      <button mat-button color="primary" (click)="onReply(i)" *ngIf="userAuthenticated">REPLY</button>
+    </mat-action-row>
+    <mat-accordion multi="true" *ngIf="post.replies">
+      <mat-expansion-panel *ngFor="let reply of post.replies">
+        <mat-expansion-panel-header>
+          <p>{{reply.user}}</p>
+        </mat-expansion-panel-header>
+        <p>{{reply.replyMessage}}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-card *ngIf="replyClicked && i == index">
+      <form (ngSubmit)="onReplySubmit(post.id, replyForm)" #replyForm="ngForm">
+        <mat-form-field>
+          <textarea
+            matInput
+            name="replyMessage"
+            rows="4"
+            ngModel
+            placeholder="Reply"
+            #replyMessage="ngModel"
+            required>
+              </textarea>
+          <mat-error *ngIf="replyMessage.invalid">Content Required</mat-error>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-raised-button color="primary" type="submit">Submit Reply</button>
+          &nbsp;
+          <button mat-raised-button color="warn" type="button" (click)="cancelReply()">Cancel</button>
+        </mat-action-row>
+      </form>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-paginator
+  [length]="totalPosts"
+  [pageSize]="postsPerPage"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="onChangedPage($event)"
+  *ngIf="posts.length > 0">
+</mat-paginator>
+<p class="mat-body-1 info-text" *ngIf="posts.length <= 0 && !isLoading" >No Posts Yet!</p>

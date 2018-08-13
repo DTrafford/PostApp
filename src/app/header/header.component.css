@@ -1,0 +1,28 @@
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+p {
+  font-size: 10px;
+}
+.dName {
+  cursor: none;
+  text-shadow: 1 1 1;
+}

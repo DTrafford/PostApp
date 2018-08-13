@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_ATLAS_PW": "StarWars81!!",
+    "JWT_KEY": "secret_String_That_will_be_Used_for_hashing_token_by_THE_JwT"
+  }
+}
