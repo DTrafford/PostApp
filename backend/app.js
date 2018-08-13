@@ -35,10 +35,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static(__dirname + '../dist'));
-app.use(express.static(__dirname + '../dist/PostApp'));
+app.use(express.static('../dist'));
+app.use(express.static('../dist/PostApp'));
 app.get('/*', function(req,res) {
-  res.sendFile(path.join(__dirname + '../dist/PostApp/index.html'));
+  res.sendFile(path.join('../dist/PostApp/index.html'));
 
 });
 
