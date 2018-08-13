@@ -35,7 +35,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/dist/PostApp'));
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname + '/dist/PostApp/index.html'));
