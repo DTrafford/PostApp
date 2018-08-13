@@ -46,13 +46,6 @@ const onListening = () => {
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-app.use(express.static(__dirname + '../dist'));
-app.use(express.static(__dirname + '../dist/PostApp'));
-app.get('/*', function(req,res) {
-  res.sendFile(path.join(__dirname + '../dist/PostApp/index.html'));
-
-});
-
 const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
