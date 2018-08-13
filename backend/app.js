@@ -35,12 +35,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static('../dist'));
-app.use(express.static('../dist/PostApp'));
-app.get('/*', function(req,res) {
-  res.sendFile(path.join('../dist/PostApp/index.html'));
 
-});
 
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);

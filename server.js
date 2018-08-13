@@ -43,9 +43,15 @@ const onListening = () => {
   debug("Listening on " + bind);
 };
 
-const port = normalizePort(process.env.PORT || "3000");
+const port = normalizePort(process.env.PORT || "8080");
 app.set("port", port);
 
+app.use(express.static(__dirname + '../dist'));
+app.use(express.static(__dirname + '../dist/PostApp'));
+app.get('/*', function(req,res) {
+  res.sendFile(path.join(__dirname + '../dist/PostApp/index.html'));
+
+});
 const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
