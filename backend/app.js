@@ -35,65 +35,12 @@ app.use((req, res, next) => {
     next();
 });
 
-// // Create a post
-// app.post('/api/posts', (req, res, next) => {
-//     const post = new Post({
-//         title: req.body.title,
-//         content: req.body.content,
-//         replies: req.body.replies
-//     });
-//     post.save().then(createdPost =>{
-//         res.status(201).json({
-//             message: 'Post Added',
-//             postId: createdPost._id
-//         });
-//     });
-// });
+app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/dist/PostApp'));
+app.get('/*', function(req,res) {
+  res.sendFile(path.join(__dirname + '/dist/PostApp/index.html'));
 
-// // Get array of posts for post list
-// app.get('/api/posts', (req, res, next) => {
-//     Post.find().then(documents => {
-//         res.status(200).json({
-//             message: 'Posts fetched succesfuly',
-//             posts: documents
-//         });
-//     });
-// });
-
-// // Get single post for post edit
-// app.get('/api/posts/:id', (req, res, next) => {
-//   Post.findById(req.params.id).then(post => {
-//     if (post) {
-//       res.status(200).json(post);
-//     } else {
-//       res.status(404).json({message: 'Post not found'});
-//     }
-//   });
-// });
-
-// // Update a post
-// app.put('/api/posts/:id', (req, res, next) => {
-//   // const post = new Post({
-//   //   _id: req.body.id,
-//   //   title: req.body.title,
-//   //   content: req.body.content,
-//   //   replies: req.body.replies
-//   // });
-//   var updatedPost = {};
-//   updatedPost = Object.assign(updatedPost, req.body);
-//   delete updatedPost._id;
-//   Post.updateOne({ _id: req.params.id }, updatedPost).then(result => {
-//     res.status(200).json({ message: 'Update Successful' });
-//   });
-// });
-
-// // Delete a post
-// app.delete('/api/posts/:id', (req, res, next) => {
-//     Post.deleteOne({_id: req.params.id}).then(result => {
-//         console.log(result);
-//         res.status(200).json({ message: 'Post Deleted'});
-//     })
-// });
+});
 
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
