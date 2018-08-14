@@ -35,17 +35,16 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use(express.static('/dist'));
-app.use("/images", express.static(path.join(__dirname, "images")));
-app.use(express.static('/dist/PostApp'));
+app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/dist/PostApp'));
 
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
 
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname + '/dist/PostApp/index.html'));
-
 });
+console.log('Console.listening');
 
 module.exports = app;
 
