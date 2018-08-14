@@ -42,7 +42,7 @@ app.use(express.static('/dist/PostApp'));
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
 
-app.use('/', function(req,res) {
+app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname + '/dist/PostApp/index.html'));
 
 });
