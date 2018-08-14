@@ -21,7 +21,7 @@ mongoose.connect('mongodb+srv://dtrafford:' + process.env.MONGO_ATLAS_PW + '@pos
 // Parse the json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use("/images", express.static(path.join('backend/images'))); // allows acces to the image folder
+// app.use("/images", express.static(path.join('backend/images'))); // allows acces to the image folder
 
 // // Allow CORS accress
 // app.use((req, res, next) => {
@@ -34,7 +34,7 @@ app.use("/images", express.static(path.join('backend/images'))); // allows acces
 //         'GET, POST, PATCH, PUT, DELETE, OPTIONS');
 //     next();
 // });
-app.use("/images", express.static(path.join(__dirname, "/backend/images")));
+app.use("/images", express.static(path.join(__dirname, '/backend/images')));
 // app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/dist/PostApp'));
 
