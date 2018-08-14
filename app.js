@@ -42,7 +42,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
 
 app.get('/', function(req,res) {
-  res.sendFile(path.join(__dirname + 'dist/PostApp/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/PostApp/index.html'));
 });
 console.log('Console.listening');
 
