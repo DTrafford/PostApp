@@ -35,8 +35,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express('/build'));
-app.use(express('/dist/PostApp'));
+app.use('/build');
+app.use('/dist/PostApp');
 
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
