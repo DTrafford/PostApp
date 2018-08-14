@@ -41,7 +41,7 @@ app.use(express.static(__dirname + '/dist/PostApp'));
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
 
-app.get('/*', function(req,res) {
+app.get('/', function(req,res) {
   ßres.sendFile(path.join(__dirname + 'dist/PostApp/index.html'));
 });
 console.log('Console.listening');
