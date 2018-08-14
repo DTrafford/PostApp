@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 //         'GET, POST, PATCH, PUT, DELETE, OPTIONS');
 //     next();
 // });
-app.use("/images", express.static(path.join(__dirname, '/backend/images')));
+// app.use("/images", express.static(path.join(__dirname, '/backend/images')));
 // app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/dist/PostApp'));
 
