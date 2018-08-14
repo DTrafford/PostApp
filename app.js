@@ -35,7 +35,7 @@ app.use("/images", express.static(path.join('backend/images'))); // allows acces
 //     next();
 // });
 app.use("/images", express.static(path.join(__dirname, "/backend/images")));
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/dist/PostApp'));
 
 app.use('/api/posts', postRoutes);
