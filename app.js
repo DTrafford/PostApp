@@ -37,13 +37,13 @@ app.use((req, res, next) => {
 
 // app.use(express.static('/dist'));
 app.use("/images", express.static(path.join(__dirname, "/backend/images")));
-app.use(express.static('/dist/PostApp'));
+app.use(express.static('/build/PostApp'));
 
 app.use('/api/posts', postRoutes);
 app.use('/api/user', userRoutes);
 
 app.get('/', function(req,res) {
-  res.sendFile(path.join(__dirname + '/dist/PostApp/index.html'));
+  res.sendFile(path.join(__dirname + '/build/PostApp/index.html'));
 
 });
 
