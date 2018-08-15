@@ -51,6 +51,7 @@ export class PostService {
 
     addPost(post: Post, image: File) {
       const postData = new FormData();
+      this.replyArray = post.replies;
       postData.append('title', post.title);
       postData.append('content', post.content);
       postData.append('replies', JSON.stringify(post.replies)); // Because replies is an array
