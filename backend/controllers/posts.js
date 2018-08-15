@@ -22,7 +22,6 @@ exports.createPost =  (req, res, next) => {
       replies: req.body.replies,
       imagePath: null
   });
-
   }
   // const post = new Post({
   //     title: req.body.title,

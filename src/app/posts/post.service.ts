@@ -49,13 +49,25 @@ export class PostService {
       return this.http.get<Post>(BACKEND_URL + '/' + id);
     }
 
-    addPost(post: Post, image: File) {
-      const postData = new FormData();
-      this.replyArray = post.replies;
+    addPost(post: Post, image: File | string) {
+      let postData: Post | FormData;
+      if (image) {
+      postData = new FormData();
       postData.append('title', post.title);
       postData.append('content', post.content);
       postData.append('replies', JSON.stringify(post.replies)); // Because replies is an array
       postData.append('image', image, post.title);
+      } else {
+        postData = {
+          id: post.id,
+          title: post.title,
+          content: post.content,
+          creatorId: post.creatorId,
+          creatorName: null,
+          replies: post.replies,
+          imagePath: null
+        };
+      }
       this.http.post<{message: string, post: Post}>(BACKEND_URL, postData)
         .subscribe((responseData) => {
           this.router.navigate(['/']);
