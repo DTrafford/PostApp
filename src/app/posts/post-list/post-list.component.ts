@@ -25,7 +25,7 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   // Paginator values
   totalPosts = 0;
-  postsPerPage = 2;
+  postsPerPage = 5;
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
 

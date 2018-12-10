@@ -1,3 +1,11 @@
+.appTitle {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 35px;
+}
+.appDescrip {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 15px;
+}
 ul {
   display: flex;
   list-style: none;

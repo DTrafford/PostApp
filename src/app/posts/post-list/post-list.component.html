@@ -1,8 +1,8 @@
 <mat-spinner *ngIf="isLoading"></mat-spinner>
-<mat-accordion multi="false" *ngIf="posts.length > 0 && !isLoading">
+<mat-accordion multi="false" *ngIf="posts.length > 0 && !isLoading" class="postListAccordian">
   <mat-expansion-panel *ngFor="let post of posts; let i = index">
     <mat-expansion-panel-header>
-      <p>{{post.title}} --- <span class=displayName> User: {{ post.creatorName }}</span></p>
+      <p class="postTitle">{{post.title}} --- <span class=displayName> User: {{ post.creatorName }}</span></p>
     </mat-expansion-panel-header>
     <p>{{post.content}}</p>
     <div class="post-image" *ngIf="post.imagePath !== null">

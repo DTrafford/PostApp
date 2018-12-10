@@ -1,7 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+body { margin: 0; font-family: 'Permanent Marker', cursive; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; } */
+
+/* .postit {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  max-width: 20%;
+  max-height: 20%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.footer {
+  display: inline;
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  opacity: 0.5;
+  z-index: -1;
+} */
