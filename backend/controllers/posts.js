@@ -23,12 +23,6 @@ exports.createPost =  (req, res, next) => {
       imagePath: null
   });
   }
-  // const post = new Post({
-  //     title: req.body.title,
-  //     content: req.body.content,
-  //     replies: req.body.replies,
-  //     imagePath: url + '/images/' + fileName
-  // });
   post.save().then(createdPost =>{
       res.status(201).json({
           message: 'Post Added',

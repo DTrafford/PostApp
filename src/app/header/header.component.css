@@ -1,3 +1,7 @@
+mat-toolbar {
+  width: 100%;
+}
+
 .appTitle {
   font-family: 'Permanent Marker', cursive;
   font-size: 35px;
@@ -33,4 +37,16 @@ p {
 .dName {
   cursor: none;
   text-shadow: 1 1 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .appTitle {
+    font-size: 20px;
+  }
+  .appDescrip {
+    display: none;
+  }
+  .navLinks {
+    font-size: 13px;
+  }
 }
