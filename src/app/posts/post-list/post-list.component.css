@@ -1,19 +1,15 @@
 /* :host targets the element itself */
 :host {
-    display: block;
-     margin-top: 1rem;
+  display: block;
+  margin-top: 1rem;
 }
 
-/* .postTitle {
-  font-family: 'Permanent Marker', cursive !important;
-} */
-
 .info-text {
-    text-align: center;
+  text-align: center;
 }
 
 mat-form-field {
-    width: 100%;
+  width: 100%;
 }
 
 mat-spinner {
@@ -21,12 +17,12 @@ mat-spinner {
 }
 
 .post-image {
-  width: 100%
+  width: 100%;
 }
 
 .post-image img {
   width: 100%;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5)
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 mat-paginator {

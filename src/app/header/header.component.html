@@ -3,10 +3,7 @@
   <span class="appDescrip">&nbsp; - a place to speak your mind!</span>
   <span class="spacer"></span>
   <ul>
-     <!-- <li>
-      <a mat-button routerLink="/" routerLinkActive="mat-accent">Posts</a>
-    </li> -->
-     <li *ngIf="userAuthenticated">
+    <li *ngIf="userAuthenticated">
       <a mat-button routerLink="/create" routerLinkActive="mat-accent" class="navLinks">Create Post</a>
     </li>
     <li *ngIf="!userAuthenticated">

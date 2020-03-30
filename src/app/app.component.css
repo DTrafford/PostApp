@@ -1,24 +1,5 @@
 main {
-    margin-top: 1rem;
-    width: 80%;
-    margin: auto;
+  margin-top: 1rem;
+  width: 80%;
+  margin: auto;
 }
-
-/* .postit {
-  position: fixed;
-  bottom: 5%;
-  right: 5%;
-  max-width: 20%;
-  max-height: 20%;
-  opacity: 0.5;
-  z-index: -1;
-}
-
-.footer {
-  display: inline;
-  position: fixed;
-  bottom: 10%;
-  left: 5%;
-  opacity: 0.5;
-  z-index: -1;
-} */
